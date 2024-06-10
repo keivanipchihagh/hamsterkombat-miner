@@ -53,14 +53,14 @@ def send_request():
             json = payload,
         )
 
-        status_code = response.status_code
-        info = response.json()
-        totalCoins = info['clickerUser']['totalCoins']
-        level = info['clickerUser']['level']
-        availableTaps = info['clickerUser']['availableTaps']
+        info: dict           = response.json()
+        totalCoins: int      = info['clickerUser']['totalCoins']
+        level: int           = info['clickerUser']['level']
+        availableTaps: int   = info['clickerUser']['availableTaps']
 
-        logger.info(f'[{status_code}] Coins: {totalCoins} (+{totalCoins-CURRENT_N_COINS}) | Level: {level} | Avaialble Taps: {availableTaps}')
+        logger.info(f'Total Coins: {totalCoins} (+{totalCoins-CURRENT_N_COINS}) | Level: {level} | Avaialble Taps: {availableTaps} | Sleep: {SLEEP_TIME}s')
 
+        # Update current N.coins
         CURRENT_N_COINS = totalCoins
 
     except Exception as ex:
