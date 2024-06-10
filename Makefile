@@ -1,3 +1,3 @@
 # Docker deploy
 docker:
-	docker-compose up --build -d
+	docker-compose -p $(name) up --build -d
