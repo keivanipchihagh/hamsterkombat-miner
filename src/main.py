@@ -22,6 +22,7 @@ from config import (
 CURRENT_N_COINS = 0
 
 def send_request():
+    global CURRENT_N_COINS
 
     # Headers
     headers = {
@@ -42,7 +43,7 @@ def send_request():
     payload = {
         'count': TAB_COUNT,
         'availableTaps': AVAILABLE_TAB_COUNT,
-        'timestamp': str(int(datetime.now().timestamp()))
+        'timestamp': int(str(datetime.now().timestamp()).split(".")[0])
     }
 
     try:

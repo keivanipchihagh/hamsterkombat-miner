@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  artemis:
-    container_name: hamsterkombat-miner
+  hamsterkombat:
+    container_name: miner
     build:
       context: .
     restart: always

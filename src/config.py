@@ -7,11 +7,13 @@
 #
 ##########################################################
 
-from dotenv import load_dotenv, find_dotenv
+import os
+from dotenv import load_dotenv
 
-load_dotenv(find_dotenv())
+load_dotenv()
 
-AUTH_TOKEN: str             = load_dotenv("AUTH_TOKEN")
-SLEEP_TIME: int             = int(load_dotenv("SLEEP_TIME"))
-TAB_COUNT: int              = int(load_dotenv("TAB_COUNT"))
-AVAILABLE_TAB_COUNT: int    = int(load_dotenv("AVAILABLE_TAB_COUNT"))
+
+AUTH_TOKEN: str             = os.getenv("AUTH_TOKEN")
+SLEEP_TIME: int             = int(os.getenv("SLEEP_TIME"))
+TAB_COUNT: int              = int(os.getenv("TAB_COUNT"))
+AVAILABLE_TAB_COUNT: int    = int(os.getenv("AVAILABLE_TAB_COUNT"))
