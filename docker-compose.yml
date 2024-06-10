@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  artemis:
+    container_name: hamsterkombat-miner
+    build:
+      context: .
+    restart: always
+    env_file:
+      - .env
